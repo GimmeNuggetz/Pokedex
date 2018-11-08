@@ -4,12 +4,11 @@ import { fetchAllPokemon } from './util/api_util';
 import configureStore from './store/store';
 import { requestAllPokemon } from './actions/pokemon_actions';
 import Root from './components/root';
+import {HashRouter, Route} from 'react-router-dom';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
   window.store = store;
-  // window.store().getState(); // should return initial app state
-  window.store.dispatch(requestAllPokemon());
 });
